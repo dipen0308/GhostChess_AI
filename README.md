@@ -1,46 +1,63 @@
-# 👻 GhostChess
+# GhostChessAI
 
-> **"The board is a stage, and the moves are mere shadows."**
+Welcome to **GhostChessAI** – a simple, human-friendly chess engine you can play right in your terminal!
 
-Welcome to **GhostChess**, a minimalist, high-performance Python chess engine. Developed for the **VIT BYOP project**, GhostChess strips away the bloat to focus on the core of computer science: recursive search, heuristic evaluation, and algorithmic efficiency.
+## Overview
+GhostChessAI is a Python-based chess engine that lets you play against an AI using a clean, labeled board interface. The AI uses a classic Minimax algorithm with Alpha-Beta pruning to make its moves, and you play by entering moves in standard UCI format (like `e2e4`).
 
-It doesn’t just play chess; it haunts the possibilities of the board until it finds the inevitable win.
+### How It Works
+- **AI as White:** The AI always starts as White and makes the first move.
+- **Human as Black:** You play as Black, entering your moves in UCI format (e.g., `d7d5`).
+- **Labeled Board:** The board is displayed with clear rank and file labels, making it easy to follow the game.
+- **Engine Logic:** The AI evaluates positions using material count and basic checkmate detection, searching several moves ahead to pick the best option.
+- **Game End:** The match ends when checkmate, stalemate, or draw is detected, and the result is displayed.
+
+## How to Play
+1. **Install Dependencies:**
+   - Make sure you have Python 3 installed.
+   - Install the `python-chess` library:
+     ```bash
+     pip install python-chess
+     ```
+2. **Run the Game:**
+   - Open a terminal in the project folder.
+   - Start the game with:
+     ```bash
+     python main.py
+     ```
+3. **Enter Your Moves:**
+   - When prompted, type your move in UCI format (e.g., `e7e5`).
+   - Type `exit` or `quit` to end the game early.
+
+## File Structure
+- **main.py** – Handles the game loop, user input, and board display.
+- **engine.py** – Contains the AI logic (Minimax with Alpha-Beta pruning).
+
+## Example Gameplay
+```
+--- CHESS ENGINE v1.2 (Labeled Interface) ---
+AI starts as White. Use UCI format (e.g., e7e5) to play.
+
+     a b c d e f g h
+   +-----------------+
+ 8 | r n b q k b n r | 8
+ 7 | p p p p p p p p | 7
+ 6 | . . . . . . . . | 6
+ 5 | . . . . . . . . | 5
+ 4 | . . . . . . . . | 4
+ 3 | . . . . . . . . | 3
+ 2 | P P P P P P P P | 2
+ 1 | R N B Q K B N R | 1
+   +-----------------+
+     a b c d e f g h
+
+AI is calculating...
+AI Move: e2e4
+Your move (Black):
+```
+
+## Why "GhostChessAI"?
+Because the AI is like a ghostly opponent: always present, never seen, and ready to challenge you at chess!
 
 ---
-
-## 🧠 The Ghost in the Machine
-
-GhostChess isn't just a basic script. It uses a sophisticated **Minimax search** paired with **Alpha-Beta Pruning** to "see" through the noise of the game.
-
-* **Minimax Strategy:** It simulates thousands of potential futures, assuming you’ll play your best while it plays its own.
-* **Alpha-Beta Pruning:** Like a ghost passing through walls, this optimization allows the engine to ignore "dead" branches of the move tree, making its calculations incredibly efficient.
-* **Material Weighting:** The engine assigns value to every piece (e.g., Queens at **900**, Knights at **320**). It knows exactly what a sacrifice is worth.
-
----
-
-## 📂 Project Anatomy
-
-* `main.py` — The interface. Handles the game loop, ASCII board rendering, and user input.
-* `engine.py` — The soul of the project. Contains the evaluation logic and search algorithms.
-* `requirements.txt` — Powering the logic with the `python-chess` library.
-
----
-
-## 🚀 Summoning the Engine
-
-Get GhostChess running on your local machine in seconds.
-
-### 1. Setup
-We recommend using a virtual environment to keep your global Python space clean:
-
-```bash
-# Initialize and activate venv
-python -m venv venv
-source venv/bin/activate  # macOS/Linux
-# OR
-.\venv\Scripts\activate   # Windows
-
-# Install dependencies
-pip install -r requirements.txt
-
-python main.py
+Enjoy your game, and feel free to explore or modify the code to make the AI smarter or the interface even friendlier!
