@@ -56,6 +56,25 @@ AI Move: e2e4
 Your move (Black):
 ```
 
+## How the AI Thinks: Minimax & Alpha-Beta Pruning
+
+### Minimax Algorithm
+The Minimax algorithm is a decision-making process used in two-player games like chess. It works by simulating all possible moves for both players up to a certain depth, assuming both play optimally:
+- **Maximizing Player (AI):** Tries to get the highest possible score.
+- **Minimizing Player (You):** Tries to get the lowest possible score for the AI (i.e., the best for themselves).
+- The AI looks ahead several moves, evaluating each possible position, and chooses the move that leads to the best outcome assuming you also play your best.
+
+### Alpha-Beta Pruning
+Alpha-Beta pruning is an optimization for Minimax that makes it much faster:
+- **Alpha** is the best score the maximizing player (AI) can guarantee so far.
+- **Beta** is the best score the minimizing player (you) can guarantee so far.
+- As the AI explores possible moves, if it finds a move that is worse than a previously examined move, it stops considering that branch ("prunes" it), because it knows it would never choose it.
+- This means the AI doesn't waste time on moves that won't affect the final decision, allowing it to search deeper and play stronger.
+
+**In short:**
+- Minimax helps the AI "think ahead" and plan its moves.
+- Alpha-Beta pruning lets it do this much more efficiently, so you get a challenging opponent without long wait times!
+
 ## Why "GhostChessAI"?
 Because the AI is like a ghostly opponent: always present, never seen, and ready to challenge you at chess!
 
